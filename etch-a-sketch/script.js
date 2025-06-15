@@ -44,7 +44,32 @@ function colorpicker(){
     })
 }
 
-
+function resizeGrid()
+{
+    const resizeBtn = document.querySelector("#resize-btn");
+    resizeBtn.addEventListener("click",()=>{
+        let inputValue = Number(prompt("Please enter the size:"));
+        if(inputValue>0 && inputValue<101)
+        {
+            container.innerHTML = "";
+            let squareValue = inputValue;
+            let squareSize = 1920 / squareValue;
+            for(let i=0; i<(squareValue**2); i++)
+            {
+                const square = document.createElement("div");
+                square.setAttribute("class","squares");
+                container.appendChild(square);
+                square.style.width = `${squareSize}px`;
+                square.style.height = `${squareSize}px`;
+            }
+            paint();
+        }
+        else
+        {
+            alert("Please enter a value between 1 and 100");
+        }
+    })
+}
 
 
 
@@ -68,6 +93,7 @@ function start()
     mouseClick();
     colorpicker();
     paint();
+    resizeGrid();
 }
 
 start();

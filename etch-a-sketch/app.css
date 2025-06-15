@@ -2,8 +2,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    background-color:dimgray
+    flex-direction: row-reverse;
+    background-color:dimgray;
+    gap:200px;
 }
 
 #container{
@@ -20,8 +21,22 @@ body{
     border: 1px solid;
 }
 
+#buttons{
+    display: flex;
+    flex-direction: column;
+}
+
 #color-picker{
-    width: 300px;
-    height: 300px;
-    margin-top: 50px;
+    width: 400px;
+    height: 150px;
+    margin-top: 80px;
+}
+
+#resize-btn{
+    width: 400px;
+    height: 150px;
+    margin-top: 80px;
+    font-size: 75px;
+    font-weight: bold;
+    border-radius: 50px;
 }
