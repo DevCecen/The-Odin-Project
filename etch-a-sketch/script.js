@@ -2,6 +2,7 @@ const container = document.querySelector("#container");
 let squareValue = 16;
 let squareSize = 1920 / squareValue;
 let mouseIsDown = false;
+let currentColor = "#000000";
 
 function generateGrid(){
     for(let i=0; i<(squareValue**2); i++)
@@ -21,7 +22,7 @@ function paint()
         square.addEventListener("mouseover",()=>{
             if(mouseIsDown == true)
             {
-                square.style.backgroundColor = "black";
+                square.style.backgroundColor = currentColor;
             }
         })
     })
@@ -35,3 +36,38 @@ function mouseClick(){
         mouseIsDown = false;
     })
 }
+
+function colorpicker(){
+    const colorPicker = document.querySelector("#color-picker");
+    colorPicker.addEventListener("input",(e)=>{
+        currentColor = e.target.value;
+    })
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function start()
+{
+    generateGrid();
+    mouseClick();
+    colorpicker();
+    paint();
+}
+
+start();
