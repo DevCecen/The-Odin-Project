@@ -1,10 +1,17 @@
 body{
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     flex-direction: row-reverse;
-    background-color:dimgray;
+    background-color:black;
     gap:200px;
+}
+
+h1 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 75px;
+    color: greenyellow;
+    margin-top: 20px;
 }
 
 #container{
@@ -12,7 +19,10 @@ body{
     flex-wrap: wrap;
     width: 1920px;
     height: 1920px;
-    margin-top: 100px;
+    margin-top: 250px;
+    margin-left: 450px;
+    border: 50px solid gray;
+    border-radius: 10px;
 }
 
 .squares{
@@ -30,25 +40,31 @@ body{
     width: 400px;
     height: 150px;
     margin-top: 80px;
+    
 }
 
 #resize-btn{
     width: 400px;
     height: 150px;
     margin-top: 80px;
-    font-size: 75px;
+    font-size: 50px;
     font-weight: bold;
     border-radius: 50px;
+    font-family: 'Press Start 2P', cursive;
+    color: greenyellow;
+    background-color: grey;
 }
 
 #rainbow-btn{
     width: 400px;
     height: 150px;
     margin-top: 80px;
-    font-size: 75px;
+    font-size: 50px;
     font-weight: bold;
     border-radius: 50px;
-    color: black;
+    font-family: 'Press Start 2P', cursive;
+    color: greenyellow;
+    background-color: grey;
 
 }
 
@@ -56,28 +72,34 @@ body{
     width: 400px;
     height: 150px;
     margin-top: 80px;
-    font-size: 75px;
+    font-size: 50px;
     font-weight: bold;
     border-radius: 50px;
-    color: black;
+    font-family: 'Press Start 2P', cursive;
+    color: greenyellow;
+    background-color: grey;
 }
 
 #clear-btn{
     width: 400px;
     height: 150px;
     margin-top: 80px;
-    font-size: 75px;
+    font-size: 50px;
     font-weight: bold;
     border-radius: 50px;
-    color: black;
+    font-family: 'Press Start 2P', cursive;
+    color: greenyellow;
+    background-color: grey;
 }
 
 #grid-btn{
     width: 400px;
     height: 150px;
     margin-top: 80px;
-    font-size: 75px;
+    font-size: 50px;
     font-weight: bold;
     border-radius: 50px;
-    color: black;
+    font-family: 'Press Start 2P', cursive;
+    color: greenyellow;
+    background-color: grey;
 }

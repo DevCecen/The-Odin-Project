@@ -16,6 +16,16 @@ document.querySelector("#rainbow-btn").addEventListener("click",()=>{
 document.querySelector("#eraser-btn").addEventListener("click",()=>{
     colorMode = "eraser";
 })
+document.querySelector("#grid-btn").addEventListener("click",()=>{
+    if(gridMode == false)
+    {
+        gridMode = true;
+    }
+    else if(gridMode == true)
+    {
+        gridMode = false;
+    }
+})
 
 function generateGrid(){
     for(let i=0; i<(squareValue**2); i++)
@@ -116,13 +126,12 @@ function gridOnOff()
     const squares = document.querySelectorAll(".squares")
     const gridBtn = document.querySelector("#grid-btn");
      gridBtn.addEventListener("click",()=>{
-        gridMode = !gridMode;
         squares.forEach(square =>{
-            if(gridMode == false)
+            if(gridMode == true)
             {
                 square.style.border = "1px solid black";
             }
-            else if(gridMode == true)
+            else if(gridMode == false)
             {
                 square.style.border = "none";
             }
@@ -130,30 +139,14 @@ function gridOnOff()
     })
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function start()
 {
+    gridOnOff();
     generateGrid();
     mouseClick();
     colorpicker();
     resizeGrid();
     paint();
-    gridOnOff();
 }
 
 start();
