@@ -40,3 +40,16 @@ body{
     font-weight: bold;
     border-radius: 50px;
 }
+
+#rainbow-btn{
+    width: 400px;
+    height: 150px;
+    margin-top: 80px;
+    font-size: 75px;
+    font-weight: bold;
+    border-radius: 50px;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+
+}
