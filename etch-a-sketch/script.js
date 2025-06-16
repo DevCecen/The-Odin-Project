@@ -5,6 +5,7 @@ let mouseIsDown = false;
 let currentColor = "#000000";
 let rainbowButton = false;
 let colorMode = "color";
+let gridMode = false;
 
 document.querySelector("#color-picker").addEventListener("input",()=>{
     colorMode = "color";
@@ -30,6 +31,7 @@ function generateGrid(){
 function paint(){
     const squares = document.querySelectorAll(".squares");
     const clearBtn = document.querySelector("#clear-btn");
+    const gridBtn = document.querySelector("#grid-btn");
     squares.forEach(square=>{
         square.addEventListener("mouseover",()=>{
             if(colorMode == "color")
@@ -61,6 +63,7 @@ function paint(){
             square.style.backgroundColor = "white";
         })
     })
+    gridOnOff();  
 }
 
 
@@ -108,8 +111,24 @@ function resizeGrid()
 }
 
 
-
-
+function gridOnOff()
+{
+    const squares = document.querySelectorAll(".squares")
+    const gridBtn = document.querySelector("#grid-btn");
+     gridBtn.addEventListener("click",()=>{
+        gridMode = !gridMode;
+        squares.forEach(square =>{
+            if(gridMode == false)
+            {
+                square.style.border = "1px solid black";
+            }
+            else if(gridMode == true)
+            {
+                square.style.border = "none";
+            }
+        })
+    })
+}
 
 
 
@@ -132,8 +151,9 @@ function start()
     generateGrid();
     mouseClick();
     colorpicker();
-    paint();
     resizeGrid();
+    paint();
+    gridOnOff();
 }
 
 start();
