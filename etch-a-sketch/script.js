@@ -4,6 +4,17 @@ let squareSize = 1920 / squareValue;
 let mouseIsDown = false;
 let currentColor = "#000000";
 let rainbowButton = false;
+let colorMode = "color";
+
+document.querySelector("#color-picker").addEventListener("input",()=>{
+    colorMode = "color";
+})
+document.querySelector("#rainbow-btn").addEventListener("click",()=>{
+    colorMode = "rainbow";
+})
+document.querySelector("#eraser-btn").addEventListener("click",()=>{
+    colorMode = "eraser";
+})
 
 function generateGrid(){
     for(let i=0; i<(squareValue**2); i++)
@@ -16,47 +27,40 @@ function generateGrid(){
     }
 }
 
-//old function
-// function paint()
-// {
-//     const squares = document.querySelectorAll(".squares");
-//     squares.forEach(square =>{
-//         square.addEventListener("mouseover",()=>{
-//             if(mouseIsDown == true)
-//             {
-//                 square.style.backgroundColor = currentColor;
-//             }
-//         })
-//     })
-// }
-
 function paint(){
     const squares = document.querySelectorAll(".squares");
-    const rainbowBtn = document.querySelector("#rainbow-btn");
-    rainbowBtn.addEventListener("click",()=>{
-        rainbowButton = !rainbowButton;
-        squares.forEach(square => {
-            square.addEventListener("mouseover",()=>{
-                if(rainbowButton ==true)
+    const clearBtn = document.querySelector("#clear-btn");
+    squares.forEach(square=>{
+        square.addEventListener("mouseover",()=>{
+            if(colorMode == "color")
+            {
+                if(mouseIsDown ==true)
                 {
-                    if(mouseIsDown==true)
-                    {
-                       let red = Math.floor(Math.random() * 256);
-                       let green = Math.floor(Math.random() * 256);
-                       let blue = Math.floor(Math.random() * 256);
-                       square.style.backgroundColor = `rgb(${red},${green},${blue})`;
-                    }
+                square.style.backgroundColor = currentColor;
                 }
-                else if(rainbowButton == false)
+            }
+            else if(colorMode == "rainbow")
+            {
+                if(mouseIsDown == true)
                 {
-                    if(mouseIsDown == true)
-                    {
-                        square.style.backgroundColor = currentColor;
-                    }
+                let red = Math.floor(Math.random() * 256);
+                let green = Math.floor(Math.random() * 256);
+                let blue = Math.floor(Math.random() * 256);
+                square.style.backgroundColor = `rgb(${red},${green},${blue})`;
                 }
-            })
+            }
+            else if(colorMode == "eraser")
+            {
+                if(mouseIsDown == true)
+                {
+                    square.style.backgroundColor = "white";
+                }
+            }
         })
-    });
+        clearBtn.addEventListener("click",()=>{
+            square.style.backgroundColor = "white";
+        })
+    })
 }
 
 
@@ -103,34 +107,13 @@ function resizeGrid()
     })
 }
 
-//old function
-// function rainbow(){
-//     const rainbowBtn = document.querySelector("#rainbow-btn");
-//     const squares = document.querySelectorAll(".squares");
-//     rainbowBtn.addEventListener("click",()=>{
-//         rainbowButton = !rainbowButton;
-//         squares.forEach(square =>{
-//             square.addEventListener("mouseover",()=>{
-//                 if(mouseIsDown == true)
-//                 {
-//                     if(rainbowButton == true)
-//                     {
-//                     let red = Math.floor(Math.random() * 256);
-//                     let green = Math.floor(Math.random() * 256);
-//                     let blue = Math.floor(Math.random() * 256);
-//                     square.style.backgroundColor = `rgb(${red},${green},${blue})`;
-//                     }
-//                     else if(rainbowButton == false)
-//                     {
-//                         square.style.backgroundColor = currentColor;
-//                     }
-//                 }
-//             })
-//         })
-//     });
-// }
 
-          
+
+
+
+
+
+
 
 
 
