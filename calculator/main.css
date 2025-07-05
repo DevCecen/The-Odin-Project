@@ -96,3 +96,12 @@ button{
     background-color: #bd3131d6;
     color: white;
 }
+
+.text{
+    font-family: 'Orbitron', monospace;
+    font-size: 250px;
+    color: black;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
